@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 export default function updateStudentGradeByCity(arr, city, gradeArr) {
   if (gradeArr.grade === undefined) {
     gradeArr.grade = 'N/A';
