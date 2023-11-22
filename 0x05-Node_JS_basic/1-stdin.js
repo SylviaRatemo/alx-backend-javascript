@@ -8,7 +8,7 @@ process.stdin.on('data', (data) => {
   }
 });
 
-// Display closing message on exit
-process.on('exit', () => {
+// Display closing message on end
+process.stdin.on('end', () => {
   process.stdout.write('This important software is now closing\n');
 });
