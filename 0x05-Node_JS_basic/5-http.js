@@ -29,8 +29,8 @@ const app = http.createServer((req, res) => {
         const studentEntries = studentPropNames.map((propName, idx) => [propName, studentPropValues[idx]]);
         studentGroups[field].push(Object.fromEntries(studentEntries));
       }
-
-      let response = `Number of students: ${Object.values(studentGroups).reduce((pre, cur) => pre + cur.length, 0)}`;
+      let response = 'This is the list of our students\n';
+      response += `Number of students: ${Object.values(studentGroups).reduce((pre, cur) => pre + cur.length, 0)}`;
 
       for (const [field, group] of Object.entries(studentGroups)) {
         const studentNames = group.map((student) => student.firstname).join(', ');
