@@ -11,6 +11,10 @@ const app = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     try {
       const fileLines = fs.readFileSync(databaseFileName, 'utf-8').trim().split('\n');
+      if (!fileLines) {
+        res.end('This is the list of our students');
+      }
+
       const studentGroups = {};
       const dbFieldNames = fileLines[0].split(',');
       const studentPropNames = dbFieldNames.slice(0, dbFieldNames.length - 1);
