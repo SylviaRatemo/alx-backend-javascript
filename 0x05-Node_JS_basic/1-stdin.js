@@ -6,7 +6,9 @@ process.stdin.on('data', (data) => {
   process.stdout.write(`Your name is: ${name}\n`);
 
   // Close the program
-  process.exit();
+  process.nextTick(() => {
+    process.exit();
+  });
 });
 
 // Display closing message on exit
