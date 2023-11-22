@@ -2,10 +2,6 @@ const fs = require('fs');
 
 const countStudents = (dataPath) => {
   try {
-    if (!fs.existsSync(dataPath) || !fs.statSync(dataPath).isFile()) {
-      throw new Error('Cannot load the database');
-    }
-
     const fileLines = fs.readFileSync(dataPath, 'utf-8').trim().split('\n');
     const studentGroups = {};
     const dbFieldNames = fileLines[0].split(',');
