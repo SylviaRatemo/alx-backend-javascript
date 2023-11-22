@@ -34,7 +34,7 @@ const countStudents = (dataPath) => {
       console.log(`Number of students in ${field}: ${group.length}. List: ${studentNames}`);
     }
   } catch (error) {
-    console.error(error.message);
+    throw new Error('Cannot load the database');
   }
 };
 
