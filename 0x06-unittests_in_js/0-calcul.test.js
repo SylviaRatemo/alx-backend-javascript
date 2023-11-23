@@ -33,4 +33,20 @@ describe('calculateNumber', () => {
   it('rounding down a and b floating point fractional numbers with trailing 9\'s', () => {
     assert.strictEqual(calculateNumber(2.499999, 3.499999), 5);
   });
+  it('should return the sum of rounded numbers', () => {
+    assert.strictEqual(calculateNumber(1, 3), 4);
+    assert.strictEqual(calculateNumber(1, 3.7), 5);
+    assert.strictEqual(calculateNumber(1.2, 3.7), 5);
+    assert.strictEqual(calculateNumber(1.5, 3.7), 6);
+  });
+
+  it('should handle negative numbers correctly', () => {
+    assert.strictEqual(calculateNumber(-1.5, 3.7), 3);
+    assert.strictEqual(calculateNumber(-1.5, -3.7), -5);
+  });
+
+  it('should handle zero correctly', () => {
+    assert.strictEqual(calculateNumber(0, 3.7), 4);
+    assert.strictEqual(calculateNumber(0, -3.7), -4);
+  });
 });
